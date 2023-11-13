@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="zh-cmn-Hans-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>《增广贤文》 - 文博社</title>
+    <link rel="stylesheet" href="https://unpkg.com/heti/umd/heti.min.css">
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<main class="container">
+    <article class="heti heti--ancient">
+        <h1>增广贤文</h1>
+        <p class="heti-small article-description">
+            《增广贤文》为中国古代儿童启蒙书目，又名《昔时贤文》、《古今贤文》。书名最早见之于明代万历年间的戏曲《牡丹亭》，据此可推知此书最迟写成于万历年间。后来，经过明、清两代文人的不断增补，才改成现在这个模样，称《增广昔时贤文》，通称《增广贤文》。作者一直未见任何书载，只知道清代同治年间儒生周希陶曾进行过重订，很可能是民间创作的结晶。
+        </p>
+        <p>再随机<a href="javascript:window.location.reload()">一句</a>；或查看《增广贤文》<a href="./index.html">全文</a>。</p>
+        <p style="padding:100px 0"></p>
+        <p class="heti-verse heti-x-large" id="article-body">
+        </p>
+        <p style="padding:100px 0"></p>
+    </article>
+    <footer>
+        <hr>
+        <small class="power-by">文字排版效果由 <a href="https://sivan.github.io/heti/">赫蹏</a> 驱动，网页托管于 <a href="https://github.com/WingBo/baijiaxing">GitHub</a> 。</small>
+    </footer>
+</main>
+
+<script src="https://unpkg.com/heti/umd/heti-addon.min.js"></script>
+<script src="./data.js"></script>
+<script>
+    function getRandomNumber(maxNumber) {
+        return Math.floor(Math.random() * Math.floor(maxNumber));
+    }
+
+    let artBodyEl = document.getElementById("article-body");
+    const contentItems = zgxwData.content
+    let len = contentItems.length
+    let _body = contentItems[getRandomNumber(len)];
+    artBodyEl.innerHTML = _body;
+    const heti = new Heti('.heti');
+    heti.autoSpacing();
+</script>
+</body>
+</html>
